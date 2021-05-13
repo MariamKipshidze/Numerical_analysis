@@ -8,7 +8,7 @@ def begining_values(x_i, t=0):
     return x_i ** 2 + 1
 
 def approximat_value(u_i, u_j, f):
-    return u_j + t/h * (u_i - u_j) + t * f
+    return u_j + t/h * (u_i - u_j) + (t * f)
 
 def exact_value(x, t):
     return t*t*t + x*x + 1
