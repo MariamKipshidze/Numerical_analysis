@@ -2,7 +2,7 @@ h = 1/4
 tau = 1/32
 
 t_0 = 0 # [0, 1/2]
-x_0 = 0 # [0, 1]
+x_0 = 0 # [0, 1] 
 
 def begining_values_0(x, t=0):
     return 2*x-3-2*x**3
