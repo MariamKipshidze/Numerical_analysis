@@ -17,7 +17,7 @@ def begining_values(x_i, t=1):  ### u(x)
 
 
 def exact_value(x, t):
-    return 3 * x * x * x - 5 * t * t * x + t - 1
+    return 3 * x * x * x - 5 * t * t * x + t - 1 
 
 
 ######################################################### 

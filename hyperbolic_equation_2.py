@@ -6,7 +6,7 @@ x_0 = 0 # [0, 1]
 
 
 def begining_values_0(i, j=0):
-    return 2*(x_0+i*h)-3-2*(x_0+i*h)**3
+    return 2*(x_0+i*h)-3-2*(x_0+i*h)**3  
 
 def beginig_values_1(i, j=0):
     return 1
