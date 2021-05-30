@@ -2,10 +2,10 @@ t = 1/5
 h = 1/4
 
 def f(x, t):
-    return 2*t - 3*x*x
+    return 3*t*t - 2*x
 
 def begining_values(x_i, t=0):
-    return (x_i * x_i*x_i) + 1
+    return (x_i * x_i) + 1
 
 def approximat_value(u_i, u_j, u_k, f):
     return u_j + ((t/(2*h)) * (u_k - u_i)) + (t * f)
@@ -21,9 +21,9 @@ u_k = begining_values(0.75)
 u_exact = exact_value(0.5, 0.2)
 
 result = approximat_value(u_i, u_j, u_k, f)
-print(f)
-print(u_i)
-print(u_j)
-print(u_k)
+# print(f)
+# print(u_i)
+# print(u_j)
+# print(u_k)
 print(result)
 print(u_exact)
