@@ -4,7 +4,6 @@ tau = 1/32
 t_0 = 0 # [0, 1/2]
 x_0 = 0 # [0, 1]
 
-x = 3
 t = 2
 
 #          (2,2)
@@ -49,45 +48,56 @@ def exact_value(i, j):
     return (2*(x_0+i*h)+(t_0+tau*j)-3)+3*(t_0+tau*j)**3*(x_0+i*h)-2*(x_0+i*h)**3
 
 
-u_j_o = begining_values_0(x, t-2) # (2,0)
+for x in range(0, 5):
+    if x == 0:
+        print(f"approximat value({x}, 2): {tau*t - 3}")
+        print(f"exact_value({x}, 2): {exact_value(x, t)}")
 
-f = fun(x-1,t-2)
-f_0 = begining_values_0(x-1) # (1,0)
-f_1 = beginig_values_1(x-1)
-f_2 = beginig_values_2(x-1)
+    elif x == 4:
+        print("=====================================")
+        print(f"approximat value({x}, 2): {-3 + tau*t + 3*(tau*t)**3}")
+        print(f"exact_value({x}, 2): {exact_value(x, t)}")
 
-if x == 1:
-    u_i = tau*t - 3
-elif x == 3:
-    u_i = -3 + tau*t + 3*(tau*t)**3
-else:
-    u_i = u(f_0=f_0, f_1=f_1, f_2=f_2, f=f) # (1,1)
+    else:
+        u_j_o = begining_values_0(x, t-2) # (2,0)
 
-f = fun(x,t-2)
-f_0 = begining_values_0(x) # (2,0)
-f_1 = beginig_values_1(x)
-f_2 = beginig_values_2(x)
+        f = fun(x-1,t-2)
+        f_0 = begining_values_0(x-1) # (1,0)
+        f_1 = beginig_values_1(x-1)
+        f_2 = beginig_values_2(x-1)
 
-u_j = u(f_0=f_0, f_1=f_1, f_2=f_2, f=f) # (2,1)
+        if x == 1:
+            u_i = tau*t - 3
+        elif x == 3:
+            u_i = -3 + tau*t + 3*(tau*t)**3
+        else:
+            u_i = u(f_0=f_0, f_1=f_1, f_2=f_2, f=f) # (1,1)
 
-f = fun(x+1,t-2)
-f_0 = begining_values_0(x+1) # (3,0)
-f_1 = beginig_values_1(x+1)
-f_2 = beginig_values_2(x+1)
+        f = fun(x,t-2)
+        f_0 = begining_values_0(x) # (2,0)
+        f_1 = beginig_values_1(x)
+        f_2 = beginig_values_2(x)
 
-u_k = u(f_0=f_0, f_1=f_1, f_2=f_2, f=f) # (3,1)
+        u_j = u(f_0=f_0, f_1=f_1, f_2=f_2, f=f) # (2,1)
 
-f = fun(x,t-1) # (2,1)
+        f = fun(x+1,t-2)
+        f_0 = begining_values_0(x+1) # (3,0)
+        f_1 = beginig_values_1(x+1)
+        f_2 = beginig_values_2(x+1)
 
-print(f)
-print(u_j_o)
-print(u_i)
-print(u_j)
-print(u_k)
+        u_k = u(f_0=f_0, f_1=f_1, f_2=f_2, f=f) # (3,1)
 
-print("=====================================")
+        f = fun(x,t-1) # (2,1)
 
-# print(approximat_value(-2.5,-2.21875, -2.3125, -2.25, 6.28125))
-# print(approximat_value(-5/2, -71/32, -37/16, -9/4, 201/32))
-print(f"approximat value: {approximat_value(u_i, u_j, u_k, u_j_o, f)}")
-print(f"exact_value: {exact_value(x, t)}")
+        # print(f)
+        # print(u_j_o)
+        # print(u_i)
+        # print(u_j)
+        # print(u_k)
+
+        print("=====================================")
+
+        # print(approximat_value(-2.5,-2.21875, -2.3125, -2.25, 6.28125))
+        # print(approximat_value(-5/2, -71/32, -37/16, -9/4, 201/32))
+        print(f"approximat value({x}, 2): {approximat_value(u_i, u_j, u_k, u_j_o, f)}")
+        print(f"exact_value({x}, 2): {exact_value(x, t)}")
