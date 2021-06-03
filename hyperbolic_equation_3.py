@@ -4,7 +4,7 @@ tau = 1/32
 t_0 = 0 # [0, 1/2]
 x_0 = 0 # [0, 1]
 
-x = 2
+x = 3
 t = 2
 
 #          (2,2)
@@ -85,4 +85,4 @@ print("=====================================")
 # print(approximat_value(-2.5,-2.21875, -2.3125, -2.25, 6.28125))
 # print(approximat_value(-5/2, -71/32, -37/16, -9/4, 201/32))
 print(f"approximat value: {approximat_value(u_i, u_j, u_k, u_j_o, f)}")
-print(f"exact_value: {exact_value(2, 2)}")
+print(f"exact_value: {exact_value(x, t)}")
