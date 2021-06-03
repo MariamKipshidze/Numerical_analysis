@@ -56,7 +56,12 @@ f_0 = begining_values_0(x-1) # (1,0)
 f_1 = beginig_values_1(x-1)
 f_2 = beginig_values_2(x-1)
 
-u_i = u(f_0=f_0, f_1=f_1, f_2=f_2, f=f) # (1,1)
+if x == 1:
+    u_i = tau*t - 3
+elif x == 3:
+    u_i = -3 + tau*t + 3*(tau*t)**3
+else:
+    u_i = u(f_0=f_0, f_1=f_1, f_2=f_2, f=f) # (1,1)
 
 f = fun(x,t-2)
 f_0 = begining_values_0(x) # (2,0)
