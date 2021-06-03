@@ -77,9 +77,7 @@ for x in range(0, 5):
         f_2 = beginig_values_2(x-1)
 
         if x == 1:
-            u_i = beginig_left_values(t)
-        elif x == 3:
-            u_i = beginig_right_values(t)
+            u_i = beginig_left_values(t-1)
         else:
             u_i = u(f_0=f_0, f_1=f_1, f_2=f_2, f=f) # (1,1)
 
@@ -95,7 +93,10 @@ for x in range(0, 5):
         f_1 = beginig_values_1(x+1)
         f_2 = beginig_values_2(x+1)
 
-        u_k = u(f_0=f_0, f_1=f_1, f_2=f_2, f=f) # (3,1)
+        if x == 3:
+            u_k = beginig_right_values(t-1)
+        else:
+            u_k = u(f_0=f_0, f_1=f_1, f_2=f_2, f=f) # (3,1)
 
         f = fun(x,t-1) # (2,1)
 
