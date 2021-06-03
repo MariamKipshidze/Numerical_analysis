@@ -33,6 +33,15 @@ def beginig_values_1(i, j=0):
 def beginig_values_2(i, j=0):
     return -12*(x_0+i*h)
 
+# //////////////////////////////////////////////////////
+
+def beginig_left_values(j, i=0):
+    return tau*j - 3
+
+def beginig_right_values(j, i=4):
+    return -3 + tau*j + 3*(tau*j)**3
+
+# //////////////////////////////////////////////////////
 
 def fun(i, j):
     return 18*(t_0+tau*j)*(x_0+h*i)+12*(x_0+h*i)
@@ -40,6 +49,7 @@ def fun(i, j):
 def u(f_0, f_1, f_2, f):
     return f_0+tau*f_1+(tau*tau/2)*(f_2+f)
 
+# ///////////////////////////////////////////////////////
 
 def approximat_value(u_i, u_j, u_k, u_j_o, f):
     return 2*u_j-u_j_o+(tau**2/h**2)*(u_k-2*u_j+u_i)+tau**2*f
@@ -50,12 +60,12 @@ def exact_value(i, j):
 
 for x in range(0, 5):
     if x == 0:
-        print(f"approximat value({x}, 2): {tau*t - 3}")
+        print(f"approximat value({x}, 2): {beginig_left_values(t)}")
         print(f"exact_value({x}, 2): {exact_value(x, t)}")
 
     elif x == 4:
         print("=====================================")
-        print(f"approximat value({x}, 2): {-3 + tau*t + 3*(tau*t)**3}")
+        print(f"approximat value({x}, 2): {beginig_right_values(t)}")
         print(f"exact_value({x}, 2): {exact_value(x, t)}")
 
     else:
@@ -67,9 +77,9 @@ for x in range(0, 5):
         f_2 = beginig_values_2(x-1)
 
         if x == 1:
-            u_i = tau*t - 3
+            u_i = beginig_left_values(t)
         elif x == 3:
-            u_i = -3 + tau*t + 3*(tau*t)**3
+            u_i = beginig_right_values(t)
         else:
             u_i = u(f_0=f_0, f_1=f_1, f_2=f_2, f=f) # (1,1)
 
