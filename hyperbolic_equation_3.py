@@ -24,13 +24,13 @@ t = 2
 #            (i, j-1)
 
 
-def begining_values_0(i, j=0):
+def begining_values_0(i, j=0):            # u(x, 0)
     return 2*(x_0+i*h)-3-2*(x_0+i*h)**3  
 
-def beginig_values_1(i, j=0):
+def beginig_values_1(i, j=0):             # u'(x, 0) (with t)
     return 1
 
-def beginig_values_2(i, j=0):
+def beginig_values_2(i, j=0):             # u"(x, 0) (with x)
     return -12*(x_0+i*h)
 
 # //////////////////////////////////////////////////////
