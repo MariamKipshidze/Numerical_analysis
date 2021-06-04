@@ -100,13 +100,13 @@ for x in range(0, 5):
 
         f = fun(x,t-1) # (2,1)
 
-        # print(f)
-        # print(u_j_o)
-        # print(u_i)
-        # print(u_j)
-        # print(u_k)
-
         print("=====================================")
+
+        print(f"f = {f}")
+        print(f"({x}, 0) = {u_j_o}")
+        print(f"({x-1}, 1) = {u_i}")
+        print(f"({x}, 1) = {u_j}")
+        print(f"({x+1}, 1) = {u_k}")
 
         # print(approximat_value(-2.5,-2.21875, -2.3125, -2.25, 6.28125))
         # print(approximat_value(-5/2, -71/32, -37/16, -9/4, 201/32))
